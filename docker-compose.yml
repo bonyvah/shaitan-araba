@@ -1,0 +1,19 @@
+# Serves ./public with nginx on http://localhost:8090 and joins Kuzot's
+# Docker network, where the scraper reaches it as http://shaitan-araba/.
+# Start Kuzot first (`make up` in the kuzot repo): the network must exist.
+services:
+  web:
+    image: nginx:alpine
+    container_name: shaitan-araba
+    ports:
+      - "8090:80"
+    volumes:
+      - ./public:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - kuzot
+
+networks:
+  kuzot:
+    name: kuzot_default
+    external: true
