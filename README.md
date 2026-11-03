@@ -58,14 +58,14 @@ the new content. There's no need to restart the container.
 
 ## Pages
 
-60 pages, all generated from the data files. Every product, price and stock
+64 pages, all generated from the data files. Every product, price and stock
 status is in the HTML itself, so a plain HTTP fetch (Kuzot's static
 scraper) sees everything; JavaScript only adds the cart, filters and order form.
 
 | Path | What it is | Kuzot `url_type` |
 |---|---|---|
 | `/index.html` | Home: hero, category tiles, best sellers, new arrivals, delivery promo, blog, visit us | `homepage` |
-| `/catalog/index.html` | All 34 products with filters and sorting | `pricing` |
+| `/catalog/index.html` | All 38 products with filters and sorting | `pricing` |
 | `/catalog/bikes.html`, `/catalog/accessories.html` | Bikes / accessories only | `pricing` |
 | `/catalog/<category>.html` | One page per category (13): `mtb`, `road`, `city`, `kids`, `ebike`, `folding`, `helmets`, `locks`, `lights`, `pumps`, `bags`, `parts`, `apparel` | `pricing` |
 | `/product/<slug>.html` | Product page: price, stock, sizes, specs, delivery cost, related items | `pricing` |
@@ -84,7 +84,7 @@ with opening hours, and catalog cards have `data-price`, `data-brand`,
 
 ## Catalog
 
-17 bicycles and 17 accessories in `src/data/catalog.json`:
+18 bicycles and 20 accessories in `src/data/catalog.json`:
 
 - **Bikes:** mountain (Merida, Trek, Giant, Stels, Format), road and gravel,
   city, kids (including a balance bike), e-bikes, folding.
